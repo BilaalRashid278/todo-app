@@ -1,0 +1,97 @@
+@import './mixins.scss';
+$bgColor : rgb(240 241 243);
+$logoColor : rgb(59 113 203);
+$shadow : rgba(0, 0, 0, 0.15) 0px 5px 15px 0px;
+.customBorder{
+    border: 2px solid red;
+}
+.center {
+    display: flex;
+    justify-content: center;
+}
+.flexing {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#head{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    // border: 2px solid red;
+    .wrapper{
+        background-color: $bgColor;
+        width: 90%;
+        padding: 1em;
+        border-radius: 6px;
+        box-shadow: $shadow;
+        height: 500px;
+        @include lg {
+            width: 60%;
+            padding: 2em;
+        }
+        .logo {
+            // @extend .customBorder;
+            height: 50px;
+            display : flex;
+            align-items : center;
+            justify-content : center;
+            div{
+                font-size : 2rem;
+                font-weight : bold;
+                color : $logoColor;
+            }
+        }
+        .add-todo {
+            .todo-wrapper {
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+                position : relative;
+                // height : 70px;
+                width : 95%;
+                padding : 0;
+                margin :0.5em auto;
+                background-color : white;
+                // @extend .customBorder;
+                box-shadow: $shadow;
+                border-radius: 8px;
+                @include md {
+                    flex-direction: row;
+                }
+                input {
+                    outline : none;
+                    width : 100%;
+                    height: 70px;
+                    border-radius : 5px;
+                    padding : 0 2em;
+                    font-size : 1.1rem;
+                    border : none;
+                    z-index: 100;
+                    border-radius: 8px;
+                    @extend .customBorder;
+                    @include md {
+                        width: 40%;
+                    }
+                }
+                .todo-Btn{
+                    // @extend .customBorder;
+                    width : 100%;
+                    // height : 100%;
+                    display : flex;
+                    align-items : center;
+                    justify-content : flex-end;
+                    padding : 0 1em;
+                    @include md {
+                        width : 60%;
+                    }
+                    #dateInput{
+                        width: 55%;
+                    }
+                }
+            }
+        }
+    }
+}

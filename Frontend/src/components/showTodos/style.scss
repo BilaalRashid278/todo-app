@@ -1,0 +1,48 @@
+@import '../../sass/mixins.scss';
+
+.center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.border{
+    border: 1px solid red;
+}
+.container{
+    // @extend .border;
+    width: 100% !important;
+    height: 300px !important;
+    display: flex;
+    flex-direction: column;
+    .filters{
+        height: 50px;
+        // @extend .border;
+    }
+    .todo-container{
+        flex-grow: 1;
+        padding: 0 1.5em;
+        overflow-y: scroll;
+        .todo{
+            display: flex;
+            height: 50px;
+            .todo-title{
+                flex-grow: 1;
+                // border: 1px solid blue;
+                display : flex;
+                align-items : center;
+                gap: 1.5em;
+                .titleText{
+                    color: rgb(89, 88, 88);
+                }
+            }
+            .todo-dates {
+                // border: 1px solid red;pa
+                min-width: 200px;
+                display: flex;
+                flex-direction: column;
+                align-items: flex-end;
+                justify-content: space-around;
+            }
+        }
+    }
+}

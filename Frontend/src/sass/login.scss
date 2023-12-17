@@ -1,0 +1,59 @@
+@import '../sass/mixins.scss';
+.container-login {
+    width: 100% !important;
+    height: calc(100vh - 4px);
+    border-radius: 9px;
+    display: flex;
+    justify-content: space-between;
+
+    .img {
+        display: none;
+        width: 40%;
+        position: relative;
+        &::after{
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.418);
+        }
+        @include md {
+            display: block;
+        }
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center;
+        }
+    }
+
+    .form-container {
+        padding: 0 20px;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        @include md {
+            width: 60%;
+        }
+        #form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 50%;
+            min-width: 300px;
+            padding: 10px;
+            height: 250px;
+            p{
+                width: 100%;
+                text-align: start;
+                font-size: 0.7rem;
+                color: red;
+            }
+        }
+    }
+
+}
